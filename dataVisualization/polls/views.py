@@ -4,6 +4,11 @@ from django.urls import reverse
 
 from .models import Choice, Question
 
+def test(request):
+    test_data=[5,5,5]
+    context = {'test_data': test_data}
+    return render(request, 'polls/test.html', context)
+
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
