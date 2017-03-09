@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-# ${1:Project Name}
+# MiniProject of MM802
 TODO: Write a project description
 ## Installation
 TODO: Describe the installation process
