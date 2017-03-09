@@ -4,8 +4,11 @@ import os
 
 def setup():
     CrimeRecord.objects.all().delete()
-    
     incidents = []
+    
+    places = []
+    years = []
+    months = []
     
     FLAG_FIRST_LINE = True
     cnt = 0
@@ -16,11 +19,20 @@ def setup():
             else:
                 splitted = line.split(',')
                 splitted[-1] = splitted[-1].strip()
+                
                 if splitted[1] not in incidents:
                     incidents.append(splitted[1])
+                
+                if splitted[0] not in places:
+                    places.append(splitted[0])                
+                if splitted[2] not in years:
+                    years.append(splitted[2])
+                if splitted[4] not in months:
+                    months.append(splitted[4])                
+                
                 CrimeRecord.objects.create(place = splitted[0], incident = splitted[1], year = int(splitted[2]) ,quarter = splitted[3],
                                            month = int(splitted[4]),times = int(splitted[5]))
                 cnt += 1
-                if cnt == 500:
+                if cnt == 30:
                     break
-    return incidents
+    return [incidents, places, years, months]

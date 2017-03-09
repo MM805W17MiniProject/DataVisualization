@@ -23,6 +23,28 @@
 			</script>
 		{% endfor %}
 		<div id="container" style="width:100%; height:400px;"></div>
+
+		<form action="{% url 'dv:index' %}" method="post">
+		{% csrf_token %}
+		<p>Places</p>
+		{% for place in places %}
+		<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place }}">{{ place }}<br>
+		{% endfor %}
+		<br>
+		<p>Years</p>
+		{% for year in years %}
+		<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year }}">{{ year }}<br>
+		{% endfor %}
+		<br>
+		<p>Month</p>
+		{% for month in months %}
+		<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month }}">{{ month }}<br>
+		{% endfor %}
+		<br>
+		<input type="submit" value="Set" />
+
+		</form>
+
 		<script>
 			$(document).ready(function(){
     				var myChart = Highcharts.chart('container', {
@@ -41,7 +63,7 @@
             				}
         			},
         			series: [{
-            				name: '',
+            				name: 'Crime Frequency',
             				data: res
         				}]
     				});
