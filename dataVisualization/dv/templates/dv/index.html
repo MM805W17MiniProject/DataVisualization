@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html> 
+	<head> 
+		<title>Crime Data Visualization</title> 
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	</head>
+	<body>
+		<script>
+			var incidents = [];
+			var res = [];	
+		</script>
+		{% for type in incidents %}
+			<script>
+				var type = "{{ type }}";
+				incidents.push(type);
+			</script>
+		{% endfor %}
+		{% for freq in res %}
+			<script>
+				var tmp = "{{ freq }}";
+				res.push(parseInt(tmp));
+			</script>
+		{% endfor %}
+		<div id="container" style="width:100%; height:400px;"></div>
+		<script>
+			$(document).ready(function(){
+    				var myChart = Highcharts.chart('container', {
+        			chart: {
+            				type: 'bar'
+        			},
+        			title: {
+            				text: 'Crime Records'
+        			},
+        			xAxis: {
+            				categories: incidents
+        			},
+        			yAxis: {
+            				title: {
+                				text: 'Frequency'
+            				}
+        			},
+        			series: [{
+            				name: '',
+            				data: res
+        				}]
+    				});
+			});
+		</script>
+	</body>
+</html>
