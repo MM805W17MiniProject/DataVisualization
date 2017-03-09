@@ -33,6 +33,6 @@ def setup():
                 CrimeRecord.objects.create(place = splitted[0], incident = splitted[1], year = int(splitted[2]) ,quarter = splitted[3],
                                            month = int(splitted[4]),times = int(splitted[5]))
                 cnt += 1
-                if cnt == 30:
+                if cnt == 450:
                     break
     return [incidents, places, years, months]
