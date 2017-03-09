@@ -1,7 +1,7 @@
 <snippet>
   <content>
 # MiniProject of MM802
--Visualize crime data collected from Edmonton city open data project.[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br />
+-Visualize crime data collected from Edmonton city open data project.Data information can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br />
 -Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
 TODO: Describe the installation process
