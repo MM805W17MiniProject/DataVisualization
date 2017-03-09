@@ -1,3 +1,6 @@
+## basic functionality of the website: interacting with the crime data in our example
+## returns information of the crime in terms of incident type, location, year and month
+
 from models import *
 from dataVisualization.settings import PROJECT_ROOT
 import os
@@ -12,6 +15,7 @@ def setup():
     
     FLAG_FIRST_LINE = True
     cnt = 0
+    # load data from text file
     with open(os.path.join(PROJECT_ROOT, 'crime.txt')) as f:
         for line in f:
             if FLAG_FIRST_LINE:
