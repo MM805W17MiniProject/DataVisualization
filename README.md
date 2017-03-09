@@ -1,7 +1,7 @@
 <snippet>
   <content>
 # MiniProject of MM802
--Visualize crime data collected from Edmonton city open data project.
+-Visualize crime data collected from Edmonton city open data project.<br />
 -Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
 TODO: Describe the installation process
