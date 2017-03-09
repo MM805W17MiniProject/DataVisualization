@@ -2,7 +2,7 @@
   <content>
 # MiniProject of MM802
 Visualize data collected from Edmonton city open data project.
-Team members: Xuping Fang, Ke Gong, Comet Li
+Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
 TODO: Describe the installation process
 ## Usage
