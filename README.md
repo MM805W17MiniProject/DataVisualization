@@ -1,7 +1,8 @@
 <snippet>
-  <content><![CDATA[
+  <content>
 # MiniProject of MM802
-TODO: Write a project description
+Visualize data collected from Edmonton city open data project.
+Team members: Xuping Fang, Ke Gong, Comet Li
 ## Installation
 TODO: Describe the installation process
 ## Usage
