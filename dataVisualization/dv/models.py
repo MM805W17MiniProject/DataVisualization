@@ -14,8 +14,17 @@ class CrimeRecord(models.Model):
     month = models.IntegerField()
     times = models.IntegerField()
 
-class DisplaySettings(models.Model):
+class Incident(models.Model):
+    incident = models.CharField(max_length=200)
+
+class Place(models.Model):
     place = models.CharField(max_length=200)
-    year = models.CharField(max_length=200)
-    quarter = models.CharField(max_length=200)
+    setted = models.BooleanField(default = True)
+
+class Month(models.Model):
     month = models.CharField(max_length=200)
+    setted = models.BooleanField(default = True)
+
+class Year(models.Model):
+    year = models.CharField(max_length=200)
+    setted = models.BooleanField(default = True)

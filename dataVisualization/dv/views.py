@@ -5,72 +5,81 @@ from django.urls import reverse
 from models import *
 from fc import *
 
-import copy
+def _get_frequency_of_crime_(incident_name):
+    qs = CrimeRecord.objects.filter(incident = incident_name)
+    
+    for place in Place.objects.filter(setted = False):
+        qs = qs.exclude(place = place.place)
+    for year in Year.objects.filter(setted = False):
+        qs = qs.exclude(year = int(year.year))
+    for month in Month.objects.filter(setted = False):
+        qs = qs.exclude(month = int(month.month))
+    
+    cnt = 0
+    for rec in qs:
+        cnt += rec.times
+
+    return cnt
+
+def get_frequency_of_crime(incidents):
+    res = []
+    for incident in incidents:
+        res.append(_get_frequency_of_crime_(incident.incident))
+    return res
+
+def set_flag(request):
+    ex_places = Place.objects.all()
+    ex_years = Year.objects.all()
+    ex_months = Month.objects.all()
+    
+    for key in request.POST:
+        if 'place' in key:
+            ex_places = ex_places.exclude(place = request.POST[key])
+            tmp = Place.objects.get(place = request.POST[key])
+            tmp.setted = True
+            tmp.save()
+        
+        if 'year' in key:
+            ex_years = ex_years.exclude(year = request.POST[key])
+            tmp = Year.objects.get(year = request.POST[key])
+            tmp.setted = True
+            tmp.save()
+        
+        if 'month' in key:
+            ex_months = ex_months.exclude(month = request.POST[key])
+            tmp = Month.objects.get(month = request.POST[key])
+            tmp.setted = True
+            tmp.save()
+    
+    for obj in ex_places:
+        obj.setted = False
+        obj.save()
+    
+    for obj in ex_years:
+        obj.setted = False
+        obj.save()
+        
+    for obj in ex_months:
+        obj.setted = False
+        obj.save()    
 
 # Create your views here.
 def index(request):
+    if len(CrimeRecord.objects.all()) == 0:
+        setup()
     
-    def _get_frequency_of_crime_(incident_name):
-        cnt = 0
-        for rec in CrimeRecord.objects.filter(incident = incident_name):
-            cnt += rec.times
-        return cnt
-    
-    def _get_frequency_of_crime_with_settings_(incident_name, request, places, years, months):
-        cnt = 0
-        query_set = CrimeRecord.objects.filter(incident = incident_name)
-        
-        for key in request.POST:
-            if 'place' in key:
-                places.remove(request.POST[key])
-            if 'year' in key:
-                years.remove(request.POST[key])
-            if 'month' in key:
-                months.remove(request.POST[key])
-        
-        for ex_place in places:
-            query_set = query_set.exclude(place = ex_place)
-        for ex_year in years:
-            query_set = query_set.exclude(year = ex_year)
-        for ex_month in months:
-            query_set = query_set.exclude(month = ex_month)        
-        
-        for rec in query_set:
-            cnt += rec.times
-        return cnt    
-    
-    def get_frequency_of_crime(incidents, request ,POST_FLAG, places, years, months):
-        res = []
-        for incident_name in incidents:
-            if not POST_FLAG:
-                res.append(_get_frequency_of_crime_(incident_name))
-            else:
-                res.append(_get_frequency_of_crime_with_settings_(incident_name, request, copy.copy(places), copy.copy(years), copy.copy(months)))
-        return res
-                   
-    
-    data_lists = setup()
-    
-    incidents = data_lists[0]
-    places = data_lists[1]
-    years = data_lists[2]
-    months = data_lists[3]
-    
-    places.sort()
-    years.sort()
-    months.sort()
-    
-    POST_FLAG = False
     if request.method == 'POST':
-        POST_FLAG = True
-        
+        set_flag(request)
     
-    res = get_frequency_of_crime(incidents, request, POST_FLAG, places, years, months)
+    incidents = list(Incident.objects.all())
+    places = list(Place.objects.all())
+    years = list(Year.objects.all())
+    months = list(Month.objects.all())
     
     context = {'incidents' : incidents, 
                'places' : places, 
                'years' : years, 
                'months' : months, 
-               'res' : res}
+               'res' : get_frequency_of_crime(incidents)}
     
     return render(request, 'dv/index.html', context)

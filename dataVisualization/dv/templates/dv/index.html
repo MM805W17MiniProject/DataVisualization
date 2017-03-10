@@ -12,7 +12,7 @@
 		</script>
 		{% for type in incidents %}
 			<script>
-				var type = "{{ type }}";
+				var type = "{{ type.incident }}";
 				incidents.push(type);
 			</script>
 		{% endfor %}
@@ -28,17 +28,29 @@
 		{% csrf_token %}
 		<p>Places</p>
 		{% for place in places %}
-		<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place }}">{{ place }}<br>
+			{% if place.setted %}
+				<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place.place }}" checked >{{ place.place }}<br>
+			{% else %}
+				<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place.place }}" >{{ place.place }}<br>
+			{% endif %}
 		{% endfor %}
 		<br>
 		<p>Years</p>
 		{% for year in years %}
-		<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year }}">{{ year }}<br>
+			{% if year.setted %}
+				<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year.year }}" checked >{{ year.year }}<br>
+			{% else %}
+				<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year.year }}">{{ year.year }}<br>
+			{% endif %}
 		{% endfor %}
 		<br>
 		<p>Month</p>
 		{% for month in months %}
-		<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month }}">{{ month }}<br>
+			{% if month.setted %}
+				<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}" checked >{{ month.month }}<br>
+			{% else %}
+				<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}">{{ month.month }}<br>
+			{% endif %}
 		{% endfor %}
 		<br>
 		<input type="submit" value="Set" />
