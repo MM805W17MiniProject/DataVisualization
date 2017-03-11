@@ -4,13 +4,23 @@
 -Visualize crime data collected from Edmonton city open data project.Data information can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br />
 -Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
-TODO: Download the components and save to <Project_Root> and prepare required environment.
+TODO: Download the components and save to <Project_Root> and prepare required environments:
 ### Django
 Django is an open source, high-level Python web framework.
 installation of Django can be found [here](https://docs.djangoproject.com/en/1.10/topics/install/)
 
 Django Rest Framework:
-
+  ```make
+  $ pip install djangorestframework
+  # optional packages
+  $ pip install markdown       # Markdown support for the browsable API.
+  $ pip install django-filter  # Filtering support
+  ```
+ or
+ ```make
+ # In command window
+ $ git clone git@github.com:tomchristie/django-rest-framework.git
+ ```
 requests:
   ```make
   # install requests
