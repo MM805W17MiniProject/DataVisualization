@@ -1,7 +1,7 @@
 <snippet>
   <content>
 # MiniProject of MM802
- - Visualize crime data collected from Edmonton city open data project. Data used can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx). We aimed to visualize criminal data in Edmonton in bar charts.<br /><br />
+ - Visualize crime data collected from Edmonton city open data project. Data used can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx). We aimed to visualize criminal data in Edmonton in bar charts.
  - Further details will be put here.
  - Team members: Xuping Fang, Ke Gong, Comet Li.
  
@@ -9,7 +9,7 @@
     TODO: Download the components and save to <Project_Root> and prepare required environments:
 
 ### virtualenv
-    virtualenv creates a isolated Python environment, which can help avoid package issue.<br />
+    virtualenv creates a isolated Python environment, which can help avoid package issue.
   ```make
   # In command window
   $ sudo apt install virtualenv
@@ -54,8 +54,8 @@ installation of Django can be found [here](https://docs.djangoproject.com/en/1.1
   $ cd <Project_Root>/dataVisualization
   $ python mange.py runserver
   ```
-    Keep the command running and open[http://127.0.0.1:8000/dv](http://127.0.0.1:8000/dv) in your browser.
-
+  
+    Keep the command running and open[this page](http://127.0.0.1:8000/dv) in your browser.
     The usage of the webpage currently provide the crime record in Abbottsfield, Edmonton, 2009.<br />
 User can select location(currently only Abbottsfield), year(currently only 2009) and months. The data will be shown in bar chart on top.
 
