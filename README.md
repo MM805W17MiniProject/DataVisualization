@@ -5,7 +5,23 @@
 -Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
 TODO: Download the components and save to <Project_Root> and prepare required environments:
-### Django
+
+### virtualenv
+virtualenv creates a isolated Python environment, which can help avoid package issue.<br />
+  ```make
+  # In command window
+  $ sudo apt install virtualenv
+  $ cd <Project_Root>
+  # adapt the environment
+  $ virtualenv venv
+  $ source venv/bin/activate
+  ```
+to leave the virtual environment:
+  ```make
+  $ deactivate
+  ```
+  
+#### packages need to be installed within virtualenv:
 Django is an open source, high-level Python web framework.
 installation of Django can be found [here](https://docs.djangoproject.com/en/1.10/topics/install/)
 
@@ -28,20 +44,7 @@ requests:
   ```
   
 
-### virtualenv
-virtualenv creates a isolated Python environment, which can help avoid package issue.<br />
-  ```make
-  # In command window
-  $ sudo apt install virtualenv
-  $ cd <Project_Root>
-  # adapt the environment
-  $ virtualenv venv
-  $ source venv/bin/activate
-  ```
-to leave the virtual environment:
-  ```make
-  $ deactivate
-  ```
+
 ## Usage
 TODO: Write usage instructions
 ## Contributing
