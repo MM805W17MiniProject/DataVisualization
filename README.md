@@ -4,7 +4,9 @@
 -Visualize crime data collected from Edmonton city open data project.Data information can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br />
 -Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
-TODO: Describe the installation process
+TODO: Download the components and prepare required environment.
+### Django
+[installation of Django can be found here](https://docs.djangoproject.com/en/1.10/topics/install/)
 ## Usage
 TODO: Write usage instructions
 ## Contributing
