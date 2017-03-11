@@ -1,8 +1,10 @@
 <snippet>
   <content>
 # MiniProject of MM802
- -Visualize crime data collected from Edmonton city open data project.Data information can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br /><br />
- -Team members: Xuping Fang, Ke Gong, Comet Li.
+ - Visualize crime data collected from Edmonton city open data project. Data used can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx). We aimed to visualize criminal data in Edmonton in bar charts.<br /><br />
+ - Further details will be put here.
+ - Team members: Xuping Fang, Ke Gong, Comet Li.
+ 
 ## Installation
     TODO: Download the components and save to <Project_Root> and prepare required environments:
 
@@ -60,6 +62,6 @@ User can select location(currently only Abbottsfield), year(currently only 2009)
 ## Contributing
 ..
 
-]]></content>
-  <tabTrigger>readme</tabTrigger>
+</content>
+  <tabTrigger></tabTrigger>
 </snippet>
