@@ -12,7 +12,7 @@ installation of Django can be found [here](https://docs.djangoproject.com/en/1.1
 Django Rest Framework:
   ```make
   $ pip install djangorestframework
-  # optional packages
+  # optional packages may be helpful
   $ pip install markdown       # Markdown support for the browsable API.
   $ pip install django-filter  # Filtering support
   ```
@@ -50,10 +50,7 @@ TODO: Write usage instructions
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-## History
-TODO: Write history
-## Credits
-TODO: Write credits
+
 ## License
 TODO: Write license
 ]]></content>
