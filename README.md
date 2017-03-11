@@ -1,13 +1,13 @@
 <snippet>
   <content>
 # MiniProject of MM802
--Visualize crime data collected from Edmonton city open data project.Data information can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br />
--Team members: Xuping Fang, Ke Gong, Comet Li.
+ -Visualize crime data collected from Edmonton city open data project.Data information can be found:[here](https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx)<br /><br />
+ -Team members: Xuping Fang, Ke Gong, Comet Li.
 ## Installation
-TODO: Download the components and save to <Project_Root> and prepare required environments:
+    TODO: Download the components and save to <Project_Root> and prepare required environments:
 
 ### virtualenv
-virtualenv creates a isolated Python environment, which can help avoid package issue.<br />
+    virtualenv creates a isolated Python environment, which can help avoid package issue.<br />
   ```make
   # In command window
   $ sudo apt install virtualenv
@@ -16,46 +16,49 @@ virtualenv creates a isolated Python environment, which can help avoid package i
   $ virtualenv venv
   $ source venv/bin/activate
   ```
-to leave the virtual environment:
+    to leave the virtual environment:
   ```make
   $ deactivate
   ```
   
 #### packages need to be installed within virtualenv:
-Django is an open source, high-level Python web framework.
+#####Django
+    Django is an open source, high-level Python web framework.
 installation of Django can be found [here](https://docs.djangoproject.com/en/1.10/topics/install/)
 
-Django Rest Framework:
+#####Django Rest Framework
+    install needed sub-package for django
   ```make
   $ pip install djangorestframework
   # optional packages may be helpful
   $ pip install markdown       # Markdown support for the browsable API.
   $ pip install django-filter  # Filtering support
   ```
- or
+     or
  ```make
  # In command window
  $ git clone git@github.com:tomchristie/django-rest-framework.git
  ```
-requests:
+#####requests (a HTTP library)
   ```make
   # install requests
   $ pip install requests
   ```
   
 
-
 ## Usage
-TODO: Write usage instructions
-## Contributing
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+  ```make
+  #in venv
+  $ cd <Project_Root>/dataVisualization
+  $ python mange.py runserver
+  #keep the command running and open[http://127.0.0.1:8000/dv](http://127.0.0.1:8000/dv) in your browser.
+  
+    The usage of the webpage currently provide the crime record in Abbottsfield, Edmonton, 2009.<br />
+User can select location(currently only Abbottsfield), year(currently only 2009) and months. The data will be shown in bar chart on top.
 
-## License
-TODO: Write license
+## Contributing
+
+
 ]]></content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
