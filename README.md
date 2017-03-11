@@ -51,13 +51,14 @@ installation of Django can be found [here](https://docs.djangoproject.com/en/1.1
   #in venv
   $ cd <Project_Root>/dataVisualization
   $ python mange.py runserver
-  #keep the command running and open[http://127.0.0.1:8000/dv](http://127.0.0.1:8000/dv) in your browser.
-  
+  ```
+    Keep the command running and open[http://127.0.0.1:8000/dv](http://127.0.0.1:8000/dv) in your browser.
+
     The usage of the webpage currently provide the crime record in Abbottsfield, Edmonton, 2009.<br />
 User can select location(currently only Abbottsfield), year(currently only 2009) and months. The data will be shown in bar chart on top.
 
 ## Contributing
-
+..
 
 ]]></content>
   <tabTrigger>readme</tabTrigger>
