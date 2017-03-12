@@ -59,6 +59,24 @@
 
 		<script>
 			$(document).ready(function(){
+				
+				Highcharts.setOptions({
+        				chart: {
+            					backgroundColor: {
+                					linearGradient: [0, 235, 500, 500],
+                					stops: [
+                    						[0, 'rgb(235, 245, 235)'],
+                    						[1, 'rgb(240, 140, 155)']
+                    					]
+            					},
+            					borderWidth: 5,
+            					plotBackgroundColor: 'rgba(0, 0, 0, .9)',
+            					plotShadow: true,
+            					plotBorderWidth: 5
+        				}
+    				});
+    
+
     				var myChart = Highcharts.chart('container', {
         			chart: {
             				type: 'bar'

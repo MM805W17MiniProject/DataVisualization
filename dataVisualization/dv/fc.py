@@ -34,5 +34,3 @@ def setup():
                                            month = int(splitted[4]),times = int(splitted[5]))
                 
                 cnt += 1
-                if cnt == 30:
-                    break
