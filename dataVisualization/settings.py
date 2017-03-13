@@ -27,7 +27,7 @@ SECRET_KEY = '&&tf=xp=fr*gy=51n1bnmy8evqt@td$*ek-vnud$lq%51y3m85'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mm802miniproject.herokuapp.com',]
+ALLOWED_HOSTS = ['mm802miniproject.herokuapp.com','127.0.0.1']
 
 
 # Application definition
