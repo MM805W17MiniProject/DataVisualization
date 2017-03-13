@@ -23,36 +23,30 @@
   $ deactivate
   ```
   
-#### packages need to be installed within virtualenv:
+#### Packages need to be installed *WITHIN* virtualenv:
 #####Django
     Django is an open source, high-level Python web framework.
-installation of Django can be found [here](https://docs.djangoproject.com/en/1.10/topics/install/)
+  ```make
+  $ pip install django
+  ```
 
-#####Django Rest Framework
+#####other needed packages
     install needed sub-package for django
   ```make
   $ pip install djangorestframework
-  # optional packages may be helpful
-  $ pip install markdown       # Markdown support for the browsable API.
-  $ pip install django-filter  # Filtering support
-  ```
-     or
- ```make
- # In command window
- $ git clone git@github.com:tomchristie/django-rest-framework.git
- ```
-#####requests (a HTTP library)
-  ```make
-  # install requests
+   # In command window
+  $ git clone git@github.com:tomchristie/django-rest-framework.git
+  # dj_database_url
+  $ pip install dj_database_url
+    # install requests(a HTTP library)
   $ pip install requests
   ```
-  
 
 ## Usage
   ```make
   #in venv
-  $ cd <Project_Root>/dataVisualization
-  $ python mange.py runserver
+  $ cd <Project_Root>
+  $ python manage.py runserver
   ```
   
     Keep the command running and open[this page](http://127.0.0.1:8000/dv) in your browser.
