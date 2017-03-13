@@ -34,5 +34,4 @@ def setup():
                                            month = int(splitted[4]),times = int(splitted[5]))
                 
                 cnt += 1
-		if cnt == 3000:
-		    break
+        print cnt
