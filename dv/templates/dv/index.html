@@ -16,16 +16,19 @@
 				<div class="page-header">
 					<h1>Crime Data Visualization</h1>
 				</div>
+				
 				<script>
 					var incidents = [];
 					var res = [];
 				</script>
+				
 				{% for type in incidents %}
 					<script>
 						var type = "{{ type.incident }}";
 						incidents.push(type);
 					</script>
 				{% endfor %}
+				
 				{% for freq in res %}
 					<script>
 						var tmp = "{{ freq }}";
@@ -34,70 +37,75 @@
 				{% endfor %}
 
 				<div id="container" style="width:100%; height:400px;"></div>
-
-				<div class="btn-group" data-toggle="buttons">
-
-				<label class="btn btn-primary active"><input type="radio" name="mychart" id="column" value="column" onclick="chartfunc()" checked>Column</label>
-				<label class="btn btn-primary"><input type="radio" name="mychart" id="bar" value="bar" onclick="chartfunc()">Bar</label>
-				<label class="btn btn-primary"><input type="radio" name="mychart" id="pie" value="pie" onclick="chartfunc()">Pie</label>
-				<label class="btn btn-primary"><input type="radio" name="mychart" id="line" value="line" onclick="chartfunc()">Line</label>
+				    <div class="btn-group" data-toggle="buttons">
+				        <label class="btn btn-primary active"><input type="radio" name="mychart" id="column" value="column" onclick="chartfunc()" checked>Column</label>
+				        <label class="btn btn-primary"><input type="radio" name="mychart" id="bar" value="bar" onclick="chartfunc()">Bar</label>
+				        <label class="btn btn-primary"><input type="radio" name="mychart" id="pie" value="pie" onclick="chartfunc()">Pie</label>
+				        <label class="btn btn-primary"><input type="radio" name="mychart" id="line" value="line" onclick="chartfunc()">Line</label>
+				    </div>
 				</div>
-				</div>
-
 			</div>
 
 			<form action="{% url 'dv:index' %}" method="post">
+			
 			{% csrf_token %}
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="card">
-						<div class="card-block">
-							<h3 class="card-title">Places</h3>
-							{% for place in places %}
+			    <div class="row">
+				    <div class="col-sm-4">
+					    <div class="card">
+						    <h3 class="card-title">Places</h3>
+						    <div class="card-block" style="height:200px; overflow:auto;">
+							    
+							    {% for place in places %}
 								{% if place.setted %}
-									<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place.place }}" checked >{{ place.place }}<br>
+								<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place.place }}" checked >{{ place.place }}<br>
 								{% else %}
-									<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place.place }}" >{{ place.place }}<br>
+								<input type="checkbox" name="place{{ forloop.counter }}" value="{{ place.place }}" >{{ place.place }}<br>
 								{% endif %}
-							{% endfor %}
-						</div>
-					</div>
-				</div>
+							    {% endfor %}
+							    
+						    </div>
+					    </div>
+				    </div>
 
-				<div class="col-sm-4">
-					<div class="card">
-						<div class="card-block">
-							<h3 class="card-title">Years</h3>
-							{% for year in years %}
+				    <div class="col-sm-4">
+					    <div class="card">
+					        <h3 class="card-title">Years</h3>
+						    <div class="card-block" style="height:200px; overflow:auto;">
+							    
+							    {% for year in years %}
 								{% if year.setted %}
-									<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year.year }}" checked >{{ year.year }}<br>
+								<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year.year }}" checked >{{ year.year }}<br>
 								{% else %}
-									<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year.year }}">{{ year.year }}<br>
+								<input type="checkbox" name="year{{ forloop.counter }}" value="{{ year.year }}">{{ year.year }}<br>
 								{% endif %}
-							{% endfor %}
-						</div>
-					</div>
-				</div>
+							    {% endfor %}
+							    
+						    </div>
+					    </div>
+				    </div>
 
-				<div class="col-sm-4">
-					<div class="card">
-						<div class="card-block">
-							<h3 class="card-title">Month</h3>
-							{% for month in months %}
+				    <div class="col-sm-4">
+					    <div class="card">
+					        <h3 class="card-title" >Month</h3>
+						    <div class="card-block" style="height:200px; overflow:auto;">
+							    
+							    {% for month in months %}
 								{% if month.setted %}
-									<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}" checked >{{ month.month }}<br>
+						        <input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}" checked >{{ month.month }}<br>
 								{% else %}
-									<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}">{{ month.month }}<br>
+								<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}">{{ month.month }}<br>
 								{% endif %}
-							{% endfor %}
-						</div>
-					</div>
-				</div>
-			<br>
-			</div>
-			<input class="btn btn-primary" type="submit" style="float:right; width: 100px;" value="Set">
+							    {% endfor %}
+						
+						    </div>
+					    </div>
+				    </div>
+			        <br>
+			    </div>
+			    <input class="btn btn-primary" type="submit" style="float:right; width:100px; align:center;" value="Set">
 			</form>
 		</div>
+		
 		<script>
 			$(function () {
 				Highcharts.setOptions({
@@ -128,11 +136,10 @@
 			                    			chart.showLoading('Loading ...');
 
 			                    			setTimeout(function () {
-			                        			chart.hideLoading();
-			                       				 chart.addSeriesAsDrilldown(e.point, series);
-			                    		}, 1000);
+			                        		    chart.hideLoading();
+			                       				chart.addSeriesAsDrilldown(e.point, series);
+			                    		    }, 1000);
 			                	}
-
 			            	}
 			        },
 			        plotBorderWidth: 0
