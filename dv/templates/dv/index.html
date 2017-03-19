@@ -91,7 +91,7 @@
 							    
 							    {% for month in months %}
 								{% if month.setted %}
-						        <input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}" checked >{{ month.month }}<br>
+								<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}" checked >{{ month.month }}<br>
 								{% else %}
 								<input type="checkbox" name="month{{ forloop.counter }}" value="{{ month.month }}">{{ month.month }}<br>
 								{% endif %}
@@ -100,7 +100,7 @@
 						    </div>
 					    </div>
 				    </div>
-			        <br>
+				    <br>
 			    </div>
 			    <input class="btn btn-primary" type="submit" style="float:right; width:100px; align:center;" value="Set">
 			</form>

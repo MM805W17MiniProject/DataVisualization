@@ -5,6 +5,8 @@ from django.urls import reverse
 from models import *
 from fc import *
 
+import operator
+
 def _get_frequency_of_crime_(incident_name):
     qs = CrimeRecord.objects.filter(incident = incident_name)
     
@@ -72,8 +74,8 @@ def index(request):
         set_flag(request)
     
     incidents = list(Incident.objects.all())
-    places = list(Place.objects.all())
-    years = list(Year.objects.all())
+    places = list(sorted(Place.objects.all(),key=operator.attrgetter('place')))
+    years = list(sorted(Year.objects.all(),key=operator.attrgetter('year')))
     months = list(Month.objects.all())
     
     context = {'incidents' : incidents, 
