@@ -55,9 +55,9 @@ User can select location(currently only Abbottsfield), year(currently only 2009)
 
 ## Contributing
 
-Xuping: Back end implementation
-Ke: documentation and chart design
-Comet: UI design
+Xuping: Back end implementation.
+Ke: documentation and chart design.
+Comet: UI design.
 
 Together: data selection, data structure design.
 
