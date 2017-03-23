@@ -24,13 +24,13 @@
   ```
   
 #### Packages need to be installed *WITHIN* virtualenv:
-#####Django
+##### Django
     Django is an open source, high-level Python web framework.
   ```make
   $ pip install django
   ```
 
-#####other needed packages
+##### other needed packages
     install needed sub-package for django
   ```make
   $ pip install djangorestframework
