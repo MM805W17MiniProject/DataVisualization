@@ -1,7 +1,7 @@
 <snippet>
   <content>
 # MiniProject of MM802
- - Visualize crime data collected from Edmonton city open data project. Data used can be found:[[here|https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx]]. We aimed to visualize criminal data in Edmonton in bar charts.
+ - Visualize crime data collected from Edmonton city open data project. Data used can be found at :https://www.edmonton.ca/residential_neighbourhoods/property_tax_assessment/property-assessment.aspx. We aimed to visualize criminal data in Edmonton in bar charts.
  - Further details will be put here.
  - Team members: Xuping Fang, Ke Gong, Comet Li.
  
@@ -50,11 +50,16 @@
   ```
   
     Keep the command running and open[this page](http://127.0.0.1:8000/dv) in your browser.
-    The usage of the webpage currently provide the crime record in Abbottsfield, Edmonton, 2009.<br />
+    The usage of the webpage currently provide the crime record in Abbottsfield, Edmonton, 2009.
 User can select location(currently only Abbottsfield), year(currently only 2009) and months. The data will be shown in bar chart on top.
 
 ## Contributing
-..
+
+Xuping: Back end implementation
+Ke: documentation and chart design
+Comet: UI design
+
+Together: data selection, data structure design.
 
 </content>
   <tabTrigger></tabTrigger>
