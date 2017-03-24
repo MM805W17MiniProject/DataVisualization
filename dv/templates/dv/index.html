@@ -41,7 +41,6 @@
 				        <label class="btn btn-primary active" onclick="chartfunc()" ><input type="radio" name="mychart" id="column" value="column" checked />Column</label>
 				        <label class="btn btn-primary" onclick="chartfunc()" ><input type="radio" name="mychart" id="bar" value="bar" />Bar</label>
 				        <label class="btn btn-primary" onclick="chartfunc()" ><input type="radio" name="mychart" id="pie" value="pie" />Pie</label>
-				        <label class="btn btn-primary" onclick="chartfunc()" ><input type="radio" name="mychart" id="line" value="line" />Line</label>
 				    </div>
 				</div>
 			</div>
@@ -124,7 +123,7 @@
         				}
     				});
 
-			// Create the chart
+			// Create the charts
 
 			var options = {
 			    	chart: {
@@ -146,11 +145,11 @@
 			    },
 
 			    title: {
-			        	text: 'Chart Title',
+			        	text: 'Three Types of Charts',
 			    },
 			    //
 			    subtitle: {
-			            	text: 'Subtitle'
+			            	text: 'Column, Bar and Pie'
 			    },
 			    //
 			    xAxis: {
@@ -207,7 +206,6 @@
 				var column = document.getElementById('column');
 				var bar = document.getElementById('bar');
 				var pie = document.getElementById('pie');
-				var line = document.getElementById('line');
 
 
 				if(column.checked)
@@ -222,16 +220,10 @@
 			        	options.chart.type = 'bar';
 			        	var chart1 = new Highcharts.Chart(options);
 			    	}
-				else if(pie.checked)
-			    	{
-			        	options.chart.renderTo = 'container';
-			        	options.chart.type = 'pie';
-			        	var chart1 = new Highcharts.Chart(options);
-			    	}
 				else
 			    	{
 			        	options.chart.renderTo = 'container';
-			        	options.chart.type = 'line';
+			        	options.chart.type = 'pie';
 			        	var chart1 = new Highcharts.Chart(options);
 			    	}
 
